@@ -30,7 +30,7 @@ public class Item {
                 id, name, quantity);
     }
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
