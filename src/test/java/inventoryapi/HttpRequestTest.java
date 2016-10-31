@@ -26,4 +26,5 @@ public class HttpRequestTest {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/items",
                 String.class)).contains("Hello, World");
     }
+    
 }
