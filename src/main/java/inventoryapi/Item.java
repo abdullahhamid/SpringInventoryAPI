@@ -1,38 +1,49 @@
 package inventoryapi;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Item {
 
-	private long id;
-    private String itemName;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String name;
     private int quantity;
+    
+    public Item() {
+    }
 
-    public Item(long id, String itemName, int quantity) {
-        this.id = id;
-        this.itemName = itemName;
+    public Item(int id, String name, int quantity) {
+    	this.id = id;
+        this.name = name;
         this.quantity = quantity;
     }
 
     @Override
     public String toString() {
         return String.format(
-                "Item[id=%d, itemName='%s', quantity=%d]",
-                id, itemName, quantity);
+                "Item[id=%d, name='%s', quantity=%d]",
+                id, name, quantity);
     }
 
 	public long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getItemName() {
-		return itemName;
+	public String getName() {
+		return name;
 	}
 
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
+	public void setItemName(String name) {
+		this.name = name;
 	}
 
 	public int getQuantity() {
