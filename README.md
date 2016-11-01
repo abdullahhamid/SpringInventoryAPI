@@ -14,22 +14,25 @@ Libraries used:
 - spring boot framework
 - spring boot starter web
 - spring boot starter test
+- spring boot starter jdbc
+- spring boot starter data rest
+- spring boot starter data jpa
 - h2 database
 
 ##Unit Tests
 Unit tests are written using Mockito to test the API.
 
 ##Item
-`int id
-String name
-int quantity`
+`int id`
+`String name`
+`int quantity`
 
 ##Usage of API - CURL Commands
 
 ###CREATE
 `curl -X POST -H "Content-Type: application/json" -d '{"name": "kitkat", "quantity": "55"}' " http://localhost:8080/item/"`
 
-####Response:
+####Response
 `{
     "id": 1,
     "name": "kitkat",
@@ -39,7 +42,7 @@ int quantity`
 ###READ - get one Item
 `curl -X GET -H "Content-Type: application/json" "http://localhost:8080/item/1"`
 
-####Response:
+####Response
 `{
     "id": 1,
     "name": "kitkat",
@@ -49,7 +52,7 @@ int quantity`
 ###READ - get all items
 `curl -X GET -H "Content-Type: application/json" "http://localhost:8080/"`
 
-####Response:
+####Response
 `[
     {
         "id": 1,
